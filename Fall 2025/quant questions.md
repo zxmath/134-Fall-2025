@@ -268,24 +268,8 @@
    
    Solving: $\frac{2}{2(W + 2B)} = \frac{1}{2(W - B)} \Rightarrow 2(W - B) = W + 2B \Rightarrow B = \frac{W}{4}$
    
-   **Practical Considerations:**
+
    
-   1. **If $W \leq 4M$:** Bet $\frac{W}{4}$ (Kelly optimal)
-   2. **If $W > 4M$:** Bet $1M$ (constraint binding)
-   3. **Risk aversion:** Bet less than Kelly (e.g., half-Kelly: $\frac{W}{8}$)
-   
-   **Expected Value Analysis:**
-   For bet $B$: $E[\text{profit}] = 0.5 \times 2B + 0.5 \times (-B) = 0.5B > 0$
-   
-   Game has positive expected value, but optimal sizing crucial for long-term wealth growth.
-   
-   **Alternative Strategies:**
-   - **Conservative:** Fixed small amount (e.g., $10K) regardless of wealth
-   - **Aggressive:** Maximum allowed ($1M) if wealth permits
-   - **Fractional Kelly:** $\lambda f^* W$ where $0 < \lambda < 1$ reduces volatility
-   
-   **Key Insight:** Kelly criterion maximizes long-term growth rate while avoiding ruin. For single-shot games, consider utility function and wealth level. The 25% rule assumes logarithmic utility and infinite repetition.  
-   d) For $p=1/2$: $E_{i+1} - 2E_i + E_{i-1} = -2$. Quadratic trial $ai^2+bi+c$ yields $a=-1$, with $c=0$ and $b=N$, so $E_i = i(N-i)$. This is the $p\to 1/2$ limit of the general formula (expand $(q/p)^i$).  
-   e) If $p<1/2$, then $q>p$ and $(q/p)^N \to \infty$, so $P_i\to 0$: negative drift implies almost sure ruin with an infinitely distant upper boundary. (If $p>1/2$, $P_i\to 1$.)  
+
   
    
