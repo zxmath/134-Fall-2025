@@ -206,11 +206,7 @@
        return result
    ```
    
-   **Key Insights:**
-   - Use monotonic deques to maintain sliding window maximum and minimum
-   - Drawdown calculation requires finding the maximum decline from any peak to subsequent trough
-   - Handle edge cases: zero/negative prices, insufficient data
-   - For financial applications, consider log returns for better statistical properties 
+
 
 6. **Tags:** `probability` `stochastic-processes` `martingales` `markov-chains` `hitting-probabilities` `gambler-ruin`  
    (Gambler's Ruin) A gambler starts with capital $i$ ($1 \le i \le N-1$) and plays independent $\pm 1$ bets: wins $+1$ with probability $p$ and loses $1$ with probability $q = 1-p$. The game stops when the capital hits $0$ or $N$. Let 
@@ -237,11 +233,7 @@
    d) For $p=1/2$: $E_{i+1} - 2E_i + E_{i-1} = -2$. Quadratic trial $ai^2+bi+c$ yields $a=-1$, with $c=0$ and $b=N$, so $E_i = i(N-i)$. This is the $p\to 1/2$ limit of the general formula (expand $(q/p)^i$).  
    e) If $p<1/2$, then $q>p$ and $(q/p)^N \to \infty$, so $P_i\to 0$: negative drift implies almost sure ruin with an infinitely distant upper boundary. (If $p>1/2$, $P_i\to 1$.)  
   
-   **Key Insights:**  
-   - Difference equation + boundary conditions gives closed forms.  
-   - Optional stopping with martingale $(q/p)^{X_n}$ (or $X_n$ when $p=1/2$) reproduces results quickly.  
-   - Fair game yields quadratic expected time; drift reduces order to linear in $N$.  
-   - Regime dichotomy: subcritical ($p<1/2$) ruin a.s.; supercritical ($p>1/2$) success a.s.; critical diffusive scaling.
+
 
 7. **Tags:** `optimal-betting` `kelly-criterion` `risk-management` `utility-maximization` `coin-flip`  
    You are in a one-on-one coin-flip gambling game. Your opponent has 1 million dollars on hand (the max you can bet is 1 million dollars). If the result is tail, you win 2x your bet; else, you lose your bet.
@@ -268,8 +260,7 @@
    
    Solving: $\frac{2}{2(W + 2B)} = \frac{1}{2(W - B)} \Rightarrow 2(W - B) = W + 2B \Rightarrow B = \frac{W}{4}$
    
-
-   
+  
 
   
    
