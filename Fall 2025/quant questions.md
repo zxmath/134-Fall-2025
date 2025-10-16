@@ -259,6 +259,28 @@
    $$\frac{1}{W + 2B} + \frac{-1}{2(W - B)} = 0$$
    
    Solving: $\frac{2}{2(W + 2B)} = \frac{1}{2(W - B)} \Rightarrow 2(W - B) = W + 2B \Rightarrow B = \frac{W}{4}$
+
+8. **Tags:** `probability` `distribution-transform` `uniform` `normal` `cdf`  
+   Let $X \sim N(0,1)$ and let $\Phi$ denote the standard normal CDF. Compute $\mathbb{E}[\Phi(X)]$.  
+   
+   **Answer:** $\displaystyle \mathbb{E}[\Phi(X)] = \tfrac{1}{2}$  
+   
+   **Solution:** By the probability integral transform, $U = \Phi(X) \sim \text{Uniform}(0,1)$ when $X$ has the same distribution as the CDF used. Therefore $\mathbb{E}[\Phi(X)] = \mathbb{E}[U] = 1/2$.  
+   More explicitly:  
+   $$\mathbb{E}[\Phi(X)] = \int_{-\infty}^{\infty} \Phi(x) \phi(x) \, dx,$$  
+   where $\phi$ is the standard normal PDF. Differentiate $I(a)=\int_{-\infty}^{\infty} \Phi(x+a) \phi(x)dx$; one finds $I'(a)=\int \phi(x+a)\phi(x)dx = \tfrac{1}{\sqrt{4\pi}} e^{-a^2/4}$ so $I(a)=\Phi(a/\sqrt{2})$. Setting $a=0$ gives $I(0)=\Phi(0)=1/2$. 
+   (Variance bonus: $\operatorname{Var}(\Phi(X)) = 1/12$.)
+   
+9. **Tags:** `conditional-expectation` `multivariate-normal` `linear-regression` `gaussian`  
+   Let $X \sim N(0,1)$ and $Y \sim N(0,4)$ be independent. Compute $\mathbb{E}[X \mid X + 2Y = 1]$.  
+   
+   **Answer:** $\displaystyle \mathbb{E}[X \mid X + 2Y = 1] = \frac{1}{17}$  
+   
+   **Solution:** Let $W = X + 2Y$. Since $(X,Y)$ is jointly Gaussian with means 0 and independence, $(X,W)$ is jointly Gaussian. The conditional expectation is linear:  
+   $$\mathbb{E}[X \mid W = w] = \frac{\operatorname{Cov}(X,W)}{\operatorname{Var}(W)} w.$$  
+   Compute moments: $\operatorname{Cov}(X,W)=\operatorname{Cov}(X, X+2Y)=\operatorname{Var}(X)+2\operatorname{Cov}(X,Y)=1+0=1$. Also $\operatorname{Var}(W)=\operatorname{Var}(X)+4\operatorname{Var}(Y)=1+4\cdot 4=17$. Thus  
+   $$\mathbb{E}[X \mid X+2Y = 1] = (1/17)\cdot 1 = \frac{1}{17}.$$  
+   (General form: for independent $X\sim N(0,\sigma_X^2)$, $Y\sim N(0,\sigma_Y^2)$, $\mathbb{E}[X\mid X + aY = c] = \frac{\sigma_X^2}{\sigma_X^2 + a^2 \sigma_Y^2} c$.) 
    
   
 
